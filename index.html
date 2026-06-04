@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>F/Advance Capital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="F/Advance Capital" />
+<meta property="og:title" content="F/Advance Capital" />
+<meta property="og:type" content="website" />
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
+<style>
+  @font-face{
+    font-family:'Open Sauce Sans';
+    src:url('assets/OpenSauceSans-Regular.ttf') format('truetype');
+    font-weight:400; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'Open Sauce Sans';
+    src:url('assets/OpenSauceSans-Light.ttf') format('truetype');
+    font-weight:300; font-style:normal; font-display:swap;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    background:#17191b;
+    color:#f0ebe1;
+    font-family:'Open Sauce Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    min-height:100vh; min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:56px 24px 120px;
+    overflow:hidden;
+  }
+  .mark{
+    width:min(80vw, 640px);
+    max-height:72vh;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mark img{width:100%; height:auto; display:block}
+  .disclaimer{
+    position:fixed; left:0; right:0; bottom:0;
+    padding:0 24px 30px;
+  }
+  .disclaimer p{
+    max-width:700px; margin:0 auto; text-align:center;
+    font-weight:300; font-size:12.5px; line-height:1.65;
+    color:rgba(240,235,225,0.42); letter-spacing:0.01em;
+  }
+  @media (max-width:600px){
+    body{padding:40px 22px 130px}
+    .mark{width:88vw}
+    .disclaimer p{font-size:11.5px}
+  }
+</style>
+</head>
+<body>
+  <div class="mark">
+    <img src="assets/footer.svg" alt="F/Advance Capital" />
+  </div>
+  <footer class="disclaimer">
+    <p>At our company, we value your privacy and are committed to protecting your personal information. We want to make it clear that we do not share your information with third parties or affiliates. The information we collect is used solely for the purposes described in our privacy policy and is not disclosed to any external entities.</p>
+  </footer>
+</body>
+</html>

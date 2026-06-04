@@ -43,6 +43,14 @@
     display:block;
   }
 
+  /* scrim: the lines fade into the dark behind the footer, so the text reads
+     clean (text gets precedence) — without changing the logo itself. */
+  .scrim{
+    position:fixed; left:0; right:0; bottom:0; height:26vh; z-index:1;
+    pointer-events:none;
+    background:linear-gradient(to top, #17191b 32%, rgba(23,25,27,0.6) 64%, rgba(23,25,27,0) 100%);
+  }
+
   /* privacy text — centered footer, like the reference */
   .disclaimer{
     position:fixed; left:0; right:0; bottom:0; z-index:2;
@@ -52,7 +60,7 @@
   .disclaimer p{
     max-width:640px; margin:0 auto;
     font-weight:300; font-size:12.5px; line-height:1.7;
-    color:rgba(240,235,225,0.4); letter-spacing:0.01em;
+    color:rgba(240,235,225,0.55); letter-spacing:0.01em;
   }
   .disclaimer a{
     color:rgba(240,235,225,0.62);
@@ -71,6 +79,7 @@
   <div class="stage">
     <img src="assets/mark.svg" alt="F/Advance Capital" />
   </div>
+  <div class="scrim" aria-hidden="true"></div>
   <footer class="disclaimer">
     <p>At our company, we value your privacy and are committed to protecting your personal information. We want to make it clear that we do not share your information with third parties or affiliates. The information we collect is used solely for the purposes described in our <a href="https://www.privacypolicygenerator.info/live.php?token=zpdgUpZKKR5UU6AoNdZxi6zAAEDi4jgX" target="_blank" rel="noopener">privacy policy</a> and is not disclosed to any external entities.</p>
   </footer>

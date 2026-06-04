@@ -30,27 +30,19 @@
     position:relative; overflow:hidden;
   }
 
-  /* full-bleed centered stage */
-  .stage{position:fixed; inset:0; display:flex; align-items:center; justify-content:center}
-
-  /* flowing lines — bleed past the edges, behind the mark */
-  .lines{
-    position:absolute; top:50%; left:50%;
-    transform:translate(-50%,-50%);
-    width:max(104vw, 1240px); height:auto;
-    pointer-events:none; user-select:none;
-  }
-
-  /* the gold F monogram — contained, centered */
-  .logo{
-    position:relative; z-index:1;
-    height:clamp(230px, 47vh, 460px); width:auto; display:block;
+  /* the full original mark (F + flowing lines) shown whole — lines cut at their
+     natural points, exactly like the original page. Scaled as large as fits. */
+  .stage{position:fixed; inset:0; padding:4vh 3vw}
+  .stage img{
+    width:100%; height:100%;
+    object-fit:contain; object-position:center;
+    display:block;
   }
 
   /* privacy text — bottom right, like the reference */
   .disclaimer{
     position:fixed; right:0; bottom:0; z-index:2;
-    padding:0 clamp(24px,5vw,96px) clamp(30px,6vh,64px);
+    padding:0 clamp(24px,5vw,96px) clamp(28px,6vh,60px);
   }
   .disclaimer p{
     max-width:540px; margin-left:auto; text-align:right;
@@ -59,17 +51,15 @@
   }
 
   @media (max-width:640px){
-    .lines{width:max(150vw, 720px)}
-    .logo{height:clamp(180px, 34vh, 320px)}
-    .disclaimer{padding:0 24px 30px}
+    .stage{padding:0 5vw}
+    .disclaimer{padding:0 22px 30px}
     .disclaimer p{max-width:100%; text-align:center; font-size:11.5px}
   }
 </style>
 </head>
 <body>
   <div class="stage">
-    <img class="lines" src="assets/lines.svg" alt="" aria-hidden="true" />
-    <img class="logo" src="assets/F-header.png" alt="F/Advance Capital" />
+    <img src="assets/mark.svg" alt="F/Advance Capital" />
   </div>
   <footer class="disclaimer">
     <p>At our company, we value your privacy and are committed to protecting your personal information. We want to make it clear that we do not share your information with third parties or affiliates. The information we collect is used solely for the purposes described in our privacy policy and is not disclosed to any external entities.</p>

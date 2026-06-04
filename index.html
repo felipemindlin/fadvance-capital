@@ -30,12 +30,12 @@
     position:relative; overflow:hidden;
   }
 
-  /* the full original mark (F + flowing lines) shown whole — lines cut at their
-     natural points, exactly like the original page. Scaled as large as fits. */
-  .stage{position:fixed; inset:0; padding:4vh 3vw}
+  /* full-bleed mark: the flowing lines reach the edges (no empty space) and the
+     gold F is translucent, so the lines show through it — like the original. */
+  .stage{position:fixed; inset:0}
   .stage img{
     width:100%; height:100%;
-    object-fit:contain; object-position:center;
+    object-fit:cover; object-position:center;
     display:block;
   }
 
@@ -44,31 +44,21 @@
     position:fixed; right:0; bottom:0; z-index:2;
     padding:0 clamp(24px,5vw,96px) clamp(28px,6vh,60px);
   }
-  .disc-inner{
-    max-width:540px; margin-left:auto;
-    display:flex; flex-direction:column; align-items:flex-end; gap:16px;
-  }
-  .disc-inner p{
-    text-align:right;
+  .disclaimer p{
+    max-width:540px; margin-left:auto; text-align:right;
     font-weight:300; font-size:13px; line-height:1.7;
     color:rgba(240,235,225,0.4); letter-spacing:0.01em;
   }
-  .pp{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:9px 18px; border:1px solid rgba(217,180,119,0.45);
-    border-radius:999px; color:#d9b477; white-space:nowrap;
-    font-size:12px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase;
-    transition:background .22s ease, color .22s ease, border-color .22s ease;
+  .disclaimer a{
+    color:rgba(240,235,225,0.62);
+    text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px;
+    transition:color .2s ease;
   }
-  .pp:hover{background:#d9b477; color:#17191b; border-color:#d9b477}
-  .pp .ar{font-size:11px; transition:transform .22s ease}
-  .pp:hover .ar{transform:translate(2px,-2px)}
+  .disclaimer a:hover{color:#d9b477}
 
   @media (max-width:640px){
-    .stage{padding:0 5vw}
     .disclaimer{padding:0 22px 30px}
-    .disc-inner{max-width:100%; align-items:center}
-    .disc-inner p{text-align:center; font-size:11.5px}
+    .disclaimer p{max-width:100%; text-align:center; font-size:11.5px}
   }
 </style>
 </head>
@@ -77,10 +67,7 @@
     <img src="assets/mark.svg" alt="F/Advance Capital" />
   </div>
   <footer class="disclaimer">
-    <div class="disc-inner">
-      <p>At our company, we value your privacy and are committed to protecting your personal information. We want to make it clear that we do not share your information with third parties or affiliates. The information we collect is used solely for the purposes described in our privacy policy and is not disclosed to any external entities.</p>
-      <a class="pp" href="https://www.privacypolicygenerator.info/live.php?token=zpdgUpZKKR5UU6AoNdZxi6zAAEDi4jgX" target="_blank" rel="noopener">Privacy Policy <span class="ar">&#8599;</span></a>
-    </div>
+    <p>At our company, we value your privacy and are committed to protecting your personal information. We want to make it clear that we do not share your information with third parties or affiliates. The information we collect is used solely for the purposes described in our <a href="https://www.privacypolicygenerator.info/live.php?token=zpdgUpZKKR5UU6AoNdZxi6zAAEDi4jgX" target="_blank" rel="noopener">privacy policy</a> and is not disclosed to any external entities.</p>
   </footer>
 </body>
 </html>
